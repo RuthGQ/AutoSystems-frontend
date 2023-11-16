@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { VentaComponent } from './components/venta/venta.component';
 import { ReporteComponent } from './components/reporte/reporte.component';
+import { CarroComponent } from './components/carro/carro.component';
+import {HttpClientModule} from '@angular/common/http';
+import { AgregarComponent } from './components/carro/agregar/agregar.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     VentaComponent,
-    ReporteComponent
+    ReporteComponent,
+    CarroComponent,
+    AgregarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

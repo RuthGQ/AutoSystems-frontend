@@ -1,0 +1,9 @@
+{
+    "/carro/*":{
+        "target": "http://localhost:8081",
+        "secure": false,
+        "changeOrigin":true,
+        "logLevel": "debug",
+        "pathRewrite": {"^/carro":"http://localhost:8081/carro"}
+    }
+}
