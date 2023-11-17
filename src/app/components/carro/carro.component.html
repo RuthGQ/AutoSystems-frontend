@@ -1,75 +1,82 @@
-<h1>Mantenimiento Carros</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="carro.component.css">
+    <title>Mantenimiento Carros</title>
+</head>
+<body>
+    <h1>Mantenimiento Carros</h1>
+    <div class="container">     
+        <div class="card form-container">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <input type="text" id="descripcion" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="marca">Marca:</label>
+                    <select id="marca" class="form-select">
+                      <option selected>Seleccione...</option>
+                      <option>...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="origen">Origen:</label>
+                    <input type="text" id="origen" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="combustible">Combustible:</label>
+                    <input type="text" id="combustible" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="stock">Stock:</label>
+                    <input type="number" id="stock" class="form-control">
+                </div>
+                <button class="btn btn-primary mt-2">
+                    Agregar
+                </button>
+                <button class="btn btn-primary mt-2">
+                    Actualizar
+                </button>
+            </div>
+        </div>
 
-<div class="card">
-    <div class="card-body">
-        <div class="mb-2">
-            <label class="form-label">
-                Descripción:
-            </label>
-            <input type="text" class="form-control">
+        <div class="list-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Origen</th>
+                        <th scope="col">Combustible</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let elemento of data">
+                        <th scope="row">{{elemento.id}}</th>
+                        <td>{{elemento.modelo}}</td>
+                        <td>{{elemento.origen}}</td>
+                        <td>{{elemento.combustible}}</td>
+                        <td>{{elemento.anio}}</td>
+                        <td>{{elemento.precio}}</td>
+                        <td>{{elemento.stock}}</td>
+                        <td><button class="btn btn-primary">Editar</button>
+                            <button class="btn btn-danger">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="mb-2">
-            <label for="inputState" class="form-label">Marca:</label>
-            <select id="inputState" class="form-select">
-              <option selected>Seleccione...</option>
-              <option>...</option>
-            </select>
-          </div>
-        <div class="mb-2">
-            <label class="form-label">
-                Origen:
-            </label>
-            <input type="text" class="form-control">
-        </div>
-        <div class="mb-2">
-            <label class="form-label">
-                Combustible:
-            </label>
-            <input type="text" class="form-control">
-        </div>
-        <div class="mb-2">
-            <label class="form-label">
-                Precio:
-            </label>
-            <input type="number" class="form-control">
-        </div>
-        <div class="mb-2">
-            <label class="form-label">
-                Stock:
-            </label>
-            <input type="number" class="form-control">
-        </div>
-        <button class="btn btn-primary mt-2">
-            Agregar
-        </button>
-        <button class="btn btn-primary mt-2">
-            Actualizar
-        </button>
-    </div> 
-</div>
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col">Descripción</th>
-            <th scope="col">Origen</th>
-            <th scope="col">Combustible</th>
-            <th scope="col">Marca</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Stock</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let elemento of data">
-            <th scope="row">{{elemento.id}}</th>
-            <td>{{elemento.modelo}}</td>
-            <td>{{elemento.origen}}</td>
-            <td>{{elemento.combustible}}</td>
-            <td>{{elemento.anio}}</td>
-            <td>{{elemento.precio}}</td>
-            <td>{{elemento.stock}}</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+    </div>
+</body>
+</html>
