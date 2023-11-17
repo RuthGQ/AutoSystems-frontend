@@ -30,7 +30,10 @@ export class CarroComponent implements OnInit{
     marca: new FormControl(''),
     precio: new FormControl(''),
     stock: new FormControl('')
-    
   })
+
+  guardarCarro(){
+    console.log(this.formCarro.value);
+  }
 
 }
