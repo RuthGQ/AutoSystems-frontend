@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { VentaComponent } from './components/venta/venta.component';
 import { ReporteComponent } from './components/reporte/reporte.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     VentaComponent,
-    ReporteComponent
+    ReporteComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
