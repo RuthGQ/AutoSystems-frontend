@@ -8,6 +8,7 @@ import { ReporteComponent } from './components/reporte/reporte.component';
 import { CarroComponent } from './components/carro/carro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AgregarComponent } from './components/carro/agregar/agregar.component';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 
 @NgModule({
@@ -17,12 +18,14 @@ import { AgregarComponent } from './components/carro/agregar/agregar.component';
  VentaComponent,
  ReporteComponent,
  CarroComponent,
-AgregarComponent
+ AgregarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
