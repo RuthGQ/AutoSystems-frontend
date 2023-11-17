@@ -4,6 +4,7 @@ import { CarroService } from 'src/app/services/carro.service';
 @Component({
   selector: 'app-carro',
   templateUrl: './carro.component.html',
+  
   styleUrls: ['./carro.component.css']
 })
 export class CarroComponent implements OnInit{
