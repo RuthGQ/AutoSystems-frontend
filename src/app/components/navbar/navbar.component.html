@@ -8,23 +8,23 @@
                 border: none;
                 font-size: 20px;
                 color: black;
-              " class="btn btn-outline-light" href="">AutoSystems</a>
+              " class="btn btn-outline-light" routerLink="">AutoSystems</a>
       </li>
 
       <li class="nav-item">
-        <a style="margin-left: 10px; border: none; font-size: 18px" class="btn btn-outline-light" href="">Carros</a>
+        <a style="margin-left: 10px; border: none; font-size: 18px" class="btn btn-outline-light" routerLink="/carro">Carros</a>
       </li>
 
       <li class="nav-item">
-        <a style="margin-left: 10px; border: none; font-size: 18px" class="btn btn-outline-light" href="#">Empleado</a>
+        <a style="margin-left: 10px; border: none; font-size: 18px" class="btn btn-outline-light" routerLink="#">Empleado</a>
       </li>
 
       <li class="nav-item">
-        <a style="margin-left: 10px; border: none; font-size: 18px" class="btn btn-outline-light" href="#">Clientes</a>
+        <a style="margin-left: 10px; border: none; font-size: 18px" class="btn btn-outline-light" routerLink="#">Clientes</a>
       </li>
 
       <li class="nav-item">
-        <a style="margin-left: 10px; border: none; font-size: 18px" class="btn btn-outline-light" href="#">Nueva Venta</a>
+        <a style="margin-left: 10px; border: none; font-size: 18px" class="btn btn-outline-light" routerLink="venta">Nueva Venta</a>
       </li>
 
       <div class="dropdown">
@@ -33,11 +33,11 @@
           Consultas
         </button>
         <div class="dropdown-menu text-center">
-          <a class="dropdown-item" href="#" >Empleados</a>
+          <a class="dropdown-item" routerLink="#" >Empleados</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" >Clientes</a>
+          <a class="dropdown-item" routerLink="#" >Clientes</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" >Carros</a>
+          <a class="dropdown-item" routerLink="#" >Carros</a>
         </div>
       </div>
       <div class="dropdown">
@@ -46,7 +46,7 @@
           Reportes
         </button>
         <div class="dropdown-menu text-center">
-          <a class="dropdown-item" href="#">Ventas</a>
+          <a class="dropdown-item" routerLink="#">Ventas</a>
         </div>
       </div>
     </ul>
@@ -59,13 +59,13 @@
         <strong> </strong>
       </button>
       <div class="dropdown-menu w3-dropdown-content w3-bar-block" style="right: 0px">
-        <a style="text-align: center" class="w3-bar-item w3-button" href="#">
+        <a style="text-align: center" class="w3-bar-item w3-button" routerLink="#">
           <img src="" alt="70" width="60" />
         </a>
-        <a style="text-align: center" class="w3-bar-item w3-button" href="#"></a>
-        <a style="text-align: center" class="w3-bar-item w3-button" href="#"></a>
+        <a style="text-align: center" class="w3-bar-item w3-button" routerLink="#"></a>
+        <a style="text-align: center" class="w3-bar-item w3-button" routerLink="#"></a>
         <div class="dropdown-divider"></div>
-        <a style="text-align: center" class="w3-bar-item w3-button">Salir</a>
+        <a style="text-align: center" class="w3-bar-item w3-button" (click)="logout()">Salir</a>
       </div>
     </form>
   </div>

@@ -20,17 +20,21 @@ export class LoginComponent {
 
   }
 
-
   validarUsuario(){
     this.authService.obtenerEmpleado(this.formularioProducto.get("user")?.value,this.formularioProducto.get("password")?.value).subscribe({
       next:(valueObtained:Empleado) => {
         if(valueObtained!=null){
-          this.route.navigate(["navbar"])
+          this.addToSession(valueObtained);
+          this.route.navigate(["carro"])
         }
       },
-      error:(error: any) => {
+      error:(error) => {
         console.log(error)
-      }
-    })
+      }
+    })
+  }
+
+  addToSession(empleado:Empleado){
+    sessionStorage.setItem("empleado",JSON.stringify(empleado))
   }
 }

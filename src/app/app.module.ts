@@ -9,6 +9,9 @@ import { ReporteComponent } from './components/reporte/reporte.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CarroComponent } from './components/carro/carro.component';
+import { AgregarComponent } from './components/carro/agregar/agregar.component'
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LoginComponent,
     VentaComponent,
     ReporteComponent,
-    NavbarComponent
+    NavbarComponent,
+    CarroComponent,
+    AgregarComponent
   ],
   imports: [
     BrowserModule,
