@@ -19,11 +19,5 @@ export class AppComponent {
       return false;
     }
 
-  Listar(){
-    this.router.navigate(["listar"]);
-  }
 
-  Agregar(){
-    this.router.navigate(["agregar"]);
-  }
 }
