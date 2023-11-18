@@ -10,7 +10,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarroComponent } from './components/carro/carro.component';
-import { AgregarComponent } from './components/carro/agregar/agregar.component'
+import { AgregarComponent } from './components/carro/agregar/agregar.component';
+import { PdfComponent } from './components/pdf/pdf.component'
+import { NgxPrintModule } from 'ngx-print';
 
 
 @NgModule({
@@ -21,13 +23,15 @@ import { AgregarComponent } from './components/carro/agregar/agregar.component'
     ReporteComponent,
     NavbarComponent,
     CarroComponent,
-    AgregarComponent
+    AgregarComponent,
+    PdfComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPrintModule
   ],
   providers: [],
   bootstrap: [AppComponent]

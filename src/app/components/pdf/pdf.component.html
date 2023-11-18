@@ -1,0 +1,45 @@
+
+<div class="text-center mt-3"><button class="btn btn-secondary"  [useExistingCss]="true" printSectionId="print-section" ngxPrint>Imprimir</button></div>
+<div id="print-section">
+    <div class="mt-5">
+        <div class="reporte-container px-5">
+            <div class="reporte-header col-md-12 d-flex justify-content-center">
+                <h2 >REPORTE DE VENTAS</h2>
+            </div>
+
+
+            <hr />
+
+            <div class="detalle-body mt-3">
+                <table class="table table-bordered border-dark">
+                    <thead class="table">
+                        <tr>
+                            <th scope="col" class="text-center">Numero de Orden</th>
+                            <th scope="col" class="text-center">Fecha</th>
+                            <th scope="col" class="text-center">Cliente</th>
+                            <th scope="col" class="text-center">Empleado</th>
+                            <th scope="col" class="text-center">Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody class="body_reporte">
+                        <tr *ngFor="let venta of ventas">
+                            <td class="text-center">{{venta.venta.id}}</td>
+                            <td class="text-center">{{venta.venta.fecha| date: 'medium'}}</td>
+                            <td class="text-center">{{venta.venta.cliente.nombre}}</td>
+                            <td class="text-center">{{venta.venta.empleado.nom}}</td>
+                            <td class="text-center">S/. {{venta.venta.monto | number : '1.2'}}</td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td class="" colspan="4">TOTAL</td>
+                            <td class="text-center text-danger fw-bold">S/. {{total | number : '1.2'}}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
