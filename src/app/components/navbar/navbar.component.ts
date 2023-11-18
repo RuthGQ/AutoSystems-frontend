@@ -16,7 +16,7 @@ export class NavbarComponent {
   logout():void{
     this.authService.logout()
     sessionStorage.clear()
-    this.router.navigate(['login'])
+    this.router.navigate([''])
   }
 
 }

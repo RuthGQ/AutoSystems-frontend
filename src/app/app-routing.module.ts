@@ -7,7 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarroComponent } from './components/carro/carro.component';
 
 const routes: Routes = [
-  {path:"login",component:LoginComponent},
+  {path:"",component:LoginComponent},
   {path:"carro", component:CarroComponent},
   {path:"venta",component:VentaComponent},
   {path:"reporte",component:ReporteComponent},
