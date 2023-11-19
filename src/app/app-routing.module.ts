@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarroComponent } from './components/carro/carro.component';
 import { PdfComponent } from './components/pdf/pdf.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
+import { FiltroComponent } from './components/carro/filtro/filtro.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:"venta",component:VentaComponent},
   {path:"reporte",component:ReporteComponent},
   {path:"pdf",component:PdfComponent},
-  {path:"cliente", component:ClienteComponent}
+  {path:"cliente", component:ClienteComponent},
+  {path:"marca", component:FiltroComponent}
 ]
 
 @NgModule({
