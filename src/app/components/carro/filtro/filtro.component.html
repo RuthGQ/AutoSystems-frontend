@@ -14,7 +14,7 @@
             <select class="form-control" name="marcaElegida" id="marcaElegida" [(ngModel)]="marcaElegida"
                 (change)="onChangeMarca()">
                 <option [ngValue]="null" selected>Elige una Marca</option>
-                <option [ngValue]="marca" *ngFor="let marca of marcas">{{marca.descripcion}}</option>
+                <option [ngValue]="marca.idmarca" *ngFor="let marca of marcas">{{marca.descripcion}}</option>
             </select>
         </div>
     </form>
@@ -26,10 +26,12 @@
                         <th scope="col">Descripción</th>
                         <th scope="col">Origen</th>
                         <th scope="col">Combustible</th>
-                        <th scope="col">Marca</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Stock</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col">Año</th>
+                        <th scope="col">Nro Serie</th>                        
+                        <th scope="col">Marca</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -38,11 +40,12 @@
                         <td>{{elemento.modelo}}</td>
                         <td>{{elemento.origen}}</td>
                         <td>{{elemento.combustible}}</td>
-                        <td>{{elemento.marca}}</td>
                         <td>{{elemento.precio}}</td>
                         <td>{{elemento.stock}}</td>
-                        <td><button class="btn btn-primary">Editar</button>
-                            <button class="btn btn-danger">Eliminar</button></td>
+                        <td>{{elemento.anio}}</td>
+                        <td>{{elemento.nroSerie}}</td>
+                        <td>{{elemento.objMarca.descripcion}}</td>
+
                     </tr>
                 </tbody>
             </table>
