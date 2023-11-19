@@ -5,12 +5,16 @@ import { VentaComponent } from './components/venta/venta.component';
 import { ReporteComponent } from './components/reporte/reporte.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarroComponent } from './components/carro/carro.component';
+import { PdfComponent } from './components/pdf/pdf.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
 
 const routes: Routes = [
-  {path:"login",component:LoginComponent},
+  {path:"",component:LoginComponent},
   {path:"carro", component:CarroComponent},
   {path:"venta",component:VentaComponent},
   {path:"reporte",component:ReporteComponent},
+  {path:"pdf",component:PdfComponent},
+  {path:"cliente", component:ClienteComponent}
 ]
 
 @NgModule({

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cliente.component.css">
+    <title>Mantenimiento Cliente</title>
+</head>
+<body>
+    <h1>Mantenimiento Cliente</h1>
+    <div class="container">     
+
+        <div class="card form-container">
+            <div class="card-body">
+              <form [formGroup]="nuevoCliente" (ngSubmit)="guardarCliente()"> 
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" class="form-control" formControlName="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" class="form-control" formControlName="apellido">
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Direccion:</label>
+                    <input type="text" id="direccion" class="form-control" formControlName="direccion">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Telefono:</label>
+                    <input type="number" id="telefono" class="form-control" formControlName="telefono">
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo:</label>
+                    <input type="text" id="correo" class="form-control" formControlName="correo">
+                </div>
+                <div class="form-group">
+                    <label for="dni">Dni:</label>
+                    <input type="number" id="dni" class="form-control" formControlName="dni">
+                </div>
+                <button class="btn btn-primary mt-2">
+                    Agregar Cliente
+                </button>
+            </form> 
+            </div>  
+        </div>
+
+        <div class="list-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Direccion</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Dni</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let elemento of datacli">
+                        <th scope="row">{{elemento.idCli}}</th>                  
+                        <td>{{elemento.nombre}}</td>
+                        <td>{{elemento.apellido}}</td>
+                        <td>{{elemento.direccion}}</td>
+                        <td>{{elemento.telefono}}</td>
+                        <td>{{elemento.correo}}</td>
+                        <td>{{elemento.dni}}</td>
+                        <td><button class="btn btn-primary">Editar</button>
+                            <button  class="btn btn-danger" (click)="eliminar(elemento.idCli)">
+                                Eliminar
+                              </button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
