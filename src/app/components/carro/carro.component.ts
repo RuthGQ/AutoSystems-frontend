@@ -30,11 +30,14 @@ export class CarroComponent implements OnInit{
   formCarro= new FormGroup({
     id: new FormControl(''),
     modelo: new FormControl(''),
-    marca: new FormControl(''),
     origen: new FormControl(''),
     combustible: new FormControl(''),
     precio: new FormControl(''),
-    stock: new FormControl('')
+    stock: new FormControl(''),
+    anio: new FormControl(''),
+    nroSerie: new FormControl(''),
+    objMarca: new FormControl('')
+
   })
 
   Agregar(){
