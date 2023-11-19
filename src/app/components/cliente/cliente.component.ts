@@ -8,6 +8,7 @@ import { ClienteService } from 'src/app/services/cliente/cliente.service';
   styleUrls: ['./cliente.component.css']
 })
 export class ClienteComponent implements OnInit {
+  
   datacli: any[] = [];
   nuevoCliente = new FormGroup({
     nombre: new FormControl(''),
@@ -16,9 +17,10 @@ export class ClienteComponent implements OnInit {
     telefono: new FormControl(''),
     correo: new FormControl(''),
     dni: new FormControl(''),
+    
   });
   clienteEditando: any = null;
-
+  
   constructor(private apiService: ClienteService) {}
 
   ngOnInit(): void {
@@ -84,4 +86,6 @@ export class ClienteComponent implements OnInit {
       this.llenarData();
     });
   }
+
+ 
 }
