@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Carro } from 'src/app/models/carro/carro';
+import { Carro} from 'src/app/models/carro/carro'
 import { Cliente } from 'src/app/models/cliente/cliente';
 import { DetalleVenta } from 'src/app/models/detalleventa/detalle-venta';
 import { Empleado } from 'src/app/models/empleado/empleado';
 import { Venta } from 'src/app/models/venta/venta';
 import { VentaTransaction } from 'src/app/models/ventatransaction/venta-transaction';
-import { CarroService } from 'src/app/services/carro/carro.service';
+import { CarroService} from 'src/app/services/carro/carro.service'
 import { VentaService } from 'src/app/services/venta/venta.service';
 import { getSerie } from 'src/app/utils/generar-serie';
 
@@ -206,10 +206,7 @@ export class VentaComponent {
           console.log(err)
         },
       });
-
-
     }
-
   }
 
   dataVentaIsCorrect(): boolean {

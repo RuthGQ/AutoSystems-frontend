@@ -12,39 +12,45 @@
     <div class="container">     
         <div class="card form-container">
             <div class="card-body">
-                <div class="form-group">
-                    <label for="descripcion">Descripción:</label>
-                    <input type="text" id="descripcion" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="marca">Marca:</label>
-                    <select id="marca" class="form-select">
-                      <option selected>Seleccione...</option>
-                      <option>...</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="origen">Origen:</label>
-                    <input type="text" id="origen" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="combustible">Combustible:</label>
-                    <input type="text" id="combustible" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="precio">Precio:</label>
-                    <input type="number" id="precio" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="stock">Stock:</label>
-                    <input type="number" id="stock" class="form-control">
-                </div>
-                <button class="btn btn-primary mt-2">
-                    Agregar
-                </button>
-                <button class="btn btn-primary mt-2">
-                    Actualizar
-                </button>
+                <form [formGroup]="formCarro" (ngSubmit)="Agregar()">
+                    <div class="form-group">
+                        <label class="form-label">Descripción:</label>
+                        <input type="text" class="form-control" name="modelo"
+                        formControlName="modelo">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Marca:</label>
+                        <select class="form-control" name="idMarca" formControlName="idMarca">
+                          <option selected>Seleccione...</option>
+                          <option value="1">Audi</option>
+                          <option value="2">Suzuki</option>
+                          <option value="3">Haval</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Origen:</label>
+                        <input type="text" class="form-control" name="origen"
+                        formControlName="origen">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Combustible:</label>
+                        <input type="text" class="form-control" name="combustible"
+                        formControlName="combustible">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Precio:</label>
+                        <input type="number" class="form-control" name="precio"
+                        formControlName="precio">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Stock:</label>
+                        <input type="number" class="form-control" name="stock"
+                        formControlName="stock">
+                    </div>
+                    <button (click)="Agregar()" class="btn btn-primary mt-2">Agregar</button>
+                    <button class="btn btn-primary mt-2">Actualizar</button>
+                </form>
+                
             </div>
         </div>
 
