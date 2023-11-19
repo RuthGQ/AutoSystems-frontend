@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { EmpleadoService } from './../../services/empleado.service';
+import { EmpleadoService } from '../../services/empleado/empleado.service';
 import { EmpleadoCreateDto, EmpleadoDto, TipoDto } from 'src/app/models/empleado.types';
 
 

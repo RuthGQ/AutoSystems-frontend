@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router} from '@angular/router'
 import { Empleado } from 'src/app/models/empleado/empleado';
 import { AuthService } from 'src/app/services/auth/auth.service';
 

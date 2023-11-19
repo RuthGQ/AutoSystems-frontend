@@ -5,5 +5,13 @@
         "changeOrigin":true,
         "logLevel": "debug",
         "pathRewrite": {"^/carro":"http://localhost:8080/carro"}
+    },
+
+    "/cliente/*":{
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin":true,
+        "logLevel": "debug",
+        "pathRewrite": {"^/cliente":"http://localhost:8080/cliente"}
     }
 }
