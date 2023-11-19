@@ -15,6 +15,7 @@ import { AgregarComponent } from './components/carro/agregar/agregar.component';
 import { PdfComponent } from './components/pdf/pdf.component'
 //import { NgxPrintModule } from 'ngx-print';
 import { ClienteComponent } from './components/cliente/cliente.component';
+import { FiltroComponent } from './components/carro/filtro/filtro.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ClienteComponent } from './components/cliente/cliente.component';
     CarroComponent,
     AgregarComponent,
     PdfComponent,
-    ClienteComponent
+    ClienteComponent,
+    FiltroComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="filtro.component.css">
+    <title>Filtro Carros</title>
+</head>
+<body>
+    <form>
+        <div class="form-group">
+            <label for="marcaElegida"><b>Marca:</b></label>
+            <select class="form-control" name="marcaElegida" id="marcaElegida" [(ngModel)]="marcaElegida"
+                (change)="onChangeMarca()">
+                <option [ngValue]="null" selected>Elige una Marca</option>
+                <option [ngValue]="marca.idmarca" *ngFor="let marca of marcas">{{marca.descripcion}}</option>
+            </select>
+        </div>
+    </form>
+        <div class="list-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Origen</th>
+                        <th scope="col">Combustible</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Año</th>
+                        <th scope="col">Nro Serie</th>                        
+                        <th scope="col">Marca</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let elemento of data">
+                        <th scope="row">{{elemento.id}}</th>
+                        <td>{{elemento.modelo}}</td>
+                        <td>{{elemento.origen}}</td>
+                        <td>{{elemento.combustible}}</td>
+                        <td>{{elemento.precio}}</td>
+                        <td>{{elemento.stock}}</td>
+                        <td>{{elemento.anio}}</td>
+                        <td>{{elemento.nroSerie}}</td>
+                        <td>{{elemento.objMarca.descripcion}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>

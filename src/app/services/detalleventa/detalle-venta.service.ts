@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DetalleVenta } from 'src/app/models/detalleventa/detalle-venta';
 
@@ -13,5 +13,11 @@ export class DetalleVentaService {
 
   getAll(){
     return this.httpClient.get<DetalleVenta[]>(this.api_url);
+  }
+
+  filterByInitialEndDate(fechaInicio:number,fechaFinal:number){
+    return this.httpClient.get<DetalleVenta[]>(this.api_url+"/filtrar",{
+      params:new HttpParams().set("fechaIn",fechaInicio).set("fechaFin", fechaFinal)
+    });
   }
 }
