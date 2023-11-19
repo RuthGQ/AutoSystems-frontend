@@ -14,6 +14,8 @@ export class CarroService {
   urlmarca = "http://localhost:8080/marca"
   
   urlApiPost ="http://localhost:8080/carro/insertar";
+  
+  urlApiDelete = "http://localhost:8080/carro/eliminar/";
 
   constructor(private http: HttpClient) { }
   public getData(): Observable<any>{
@@ -34,5 +36,10 @@ export class CarroService {
 
   BuscarCarro(buscarCarro: BuscarCarro): Observable<any[]> {
     return this.http.post<any[]>(this.api_url, buscarCarro);
+  }
+
+  public eliminarCarro(id: number) {
+    console.log(id);
+    return this.http.delete(this.urlApiDelete+id);
   }
 }
