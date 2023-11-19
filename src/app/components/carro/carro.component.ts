@@ -46,5 +46,12 @@ export class CarroComponent implements OnInit{
       console.log(result);
     })
   }
+  
+  eliminar(id: number) {
+    this.apiService.eliminarCarro(id).subscribe(result => {
+      console.log(result);
+      this.llenarData();
+    });
+  }
 
 }
