@@ -11,7 +11,9 @@ export class ClienteService {
 
  urlApiDelete="http://localhost:8080/cliente/eliminar/"
 
- urlApiPost = "http://localhost:8080/cliente/insertar/" 
+ urlApiPost = "http://localhost:8080/cliente/insertar" 
+
+ urlApiPut = "http://localhost:8080/cliente/actualizar";
 
   constructor(private http: HttpClient) { }
   public getData(): Observable<any>{
@@ -19,7 +21,11 @@ export class ClienteService {
   }
 
   public agregarCliente(nuevoCliente: any): Observable<any> {
-    return this.http.post(this.urlApiPost, nuevoCliente);
+    return this.http. post(this.urlApiPost, nuevoCliente);
+  }
+
+  public actualizarCliente(clienteEditando: any): Observable<any> {
+    return this.http.put(this.urlApiPut, clienteEditando);
   }
 
   public  eliminarCliente(idCli:number) {

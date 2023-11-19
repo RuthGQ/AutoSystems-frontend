@@ -39,9 +39,12 @@
                     <label for="dni">Dni:</label>
                     <input type="number" id="dni" class="form-control" formControlName="dni">
                 </div>
-                <button class="btn btn-primary mt-2">
+                <button type="submit" class="btn btn-primary mt-2">
                     Agregar Cliente
                 </button>
+                <button type="button" class="btn btn-primary mt-2" (click)="actualizarCliente()">
+                    Actualizar
+                  </button>
             </form> 
             </div>  
         </div>
@@ -69,7 +72,7 @@
                         <td>{{elemento.telefono}}</td>
                         <td>{{elemento.correo}}</td>
                         <td>{{elemento.dni}}</td>
-                        <td><button class="btn btn-primary">Editar</button>
+                        <td> <button class="btn btn-primary" (click)="editarCliente(elemento)">Editar</button>
                             <button  class="btn btn-danger" (click)="eliminar(elemento.idCli)">
                                 Eliminar
                               </button></td>
