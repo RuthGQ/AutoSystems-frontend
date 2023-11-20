@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BuscarCarro } from 'src/app/models/BuscarCarro';
 import { Carro } from 'src/app/models/carro/carro';
 
 @Injectable({
@@ -17,17 +16,31 @@ export class CarroService {
   
   urlApiDelete = "http://localhost:8080/carro/eliminar/";
 
-  constructor(private http: HttpClient) { }
+  urlApiPut = "http://localhost:8080/carro/actualizar";
+
+  constructor(private http: HttpClient) { 
+
+  }
+
   public getData(): Observable<any>{
     return this.http.get<any>(this.api_url);
   }
-  obtenerCarroPorId(id:number){
-    return this.http.get<Carro>(this.api_url+"/"+id)
+
+  public agregarCarro(formCarro: any): Observable<any>{
+    return this.http.post(this.urlApiPost,formCarro);
   }
 
-  public agregarCarro(data: any){
-    console.log(data);
-    return this.http.post(this.urlApiPost,data);
+  public actualizarCarro(carroEditando: any): Observable<any> {
+    return this.http.put(this.urlApiPut, carroEditando);
+  }
+
+  public eliminarCarro(id: number) {
+    console.log(id);
+    return this.http.delete(this.urlApiDelete+id);
+  }
+
+  obtenerCarroPorId(id:number){
+    return this.http.get<Carro>(this.api_url+"/"+id)
   }
 
   filtrarPorMarca(): Observable<any[]>{
@@ -36,10 +49,5 @@ export class CarroService {
 
   buscarCarro(buscarCarro: string): Observable<any> {
     return this.http.get(this.api_url+"/marca/"+buscarCarro);
-  }
-
-  public eliminarCarro(id: number) {
-    console.log(id);
-    return this.http.delete(this.urlApiDelete+id);
   }
 }

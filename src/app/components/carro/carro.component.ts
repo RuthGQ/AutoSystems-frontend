@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarroService } from 'src/app/services/carro/carro.service';
-import { Carro} from '../../models/carro/carro'
-import {FormGroup,FormControl} from '@angular/forms'
+import { FormGroup,FormControl} from '@angular/forms'
+import { Marca } from 'src/app/models/marca/marca'
 
 @Component({
   selector: 'app-carro',
@@ -11,24 +11,7 @@ import {FormGroup,FormControl} from '@angular/forms'
 export class CarroComponent implements OnInit{
 
   data: any[]=[];
-  carroArray: Carro[]=[]
-  constructor(private apiService: CarroService){}
-
-  ngOnInit(): void {
-    this.llenarData();
- } 
-
-  llenarData(){
-    this.apiService.getData().subscribe(data=>{
-      this.data=data;
-      this.carroArray=data;
-      console.log(this.data);
-      console.log(this.carroArray);
-      HTMLFormControlsCollection
-    })
-  }
-  formCarro= new FormGroup({
-    id: new FormControl(''),
+  formCarro = new FormGroup({
     modelo: new FormControl(''),
     origen: new FormControl(''),
     combustible: new FormControl(''),
@@ -38,13 +21,80 @@ export class CarroComponent implements OnInit{
     nroSerie: new FormControl(''),
     objMarca: new FormControl('')
 
-  })
+  });
+  carroEditando:  any = null;
 
+  objMarca: Marca[] = [
+    { idmarca: 1, descripcion:"Audi"},
+    { idmarca: 2, descripcion:"Suzuki"},
+    { idmarca: 3, descripcion:"Haval"},
+    { idmarca: 4, descripcion:"Great Wall"},
+    { idmarca: 5, descripcion:"Honda"},
+    { idmarca: 6, descripcion:"Mazda"},
+    { idmarca: 7, descripcion:"Changan"},
+    { idmarca: 8, descripcion:"Mercedes-Benz"}
+  ]
+
+
+  constructor(private apiService: CarroService){}
+
+  ngOnInit(): void {
+    this.llenarData();
+ } 
+
+  llenarData(){
+    this.apiService.getData().subscribe(data=>{
+      this.data=data;
+      console.log(this.data);
+    });
+  }
+  
   Agregar(){
-    console.log(this.formCarro.value);
     this.apiService.agregarCarro(this.formCarro.value).subscribe((result)=>{
       console.log(result);
-    })
+      this.limpiarFormulario();
+      this.llenarData();
+    },
+    error => {
+      console.error('Error al agregar Carro', error);
+    }
+    );
+  }
+
+  ActualizarCarro() {
+    if (this.carroEditando && this.carroEditando.id) {
+      const id = { ...this.formCarro.value, id: this.carroEditando.id};
+
+      this.apiService.actualizarCarro(id).subscribe(
+        result => {
+          console.log('Respuesta del servidor', result);
+          this.limpiarFormulario();
+          this.llenarData();
+          this.carroEditando = null;
+        },
+      );
+    }
+  }
+
+  editarCarro(carro: any) {
+    if(carro.id) {
+      this.formCarro.setValue({
+        modelo: carro.modelo,
+        origen: carro.origen,
+        combustible: carro.combustible,
+        precio: carro.precio,
+        stock: carro.stock,
+        anio: carro.anio,
+        nroSerie: carro.nroSerie,
+        objMarca: carro.objMarca,
+      });
+      this.carroEditando = carro;
+    }
+  }
+ 
+  limpiarFormulario() {
+    this.formCarro.reset();
+    this.carroEditando = null;
   }
   
   eliminar(id: number) {

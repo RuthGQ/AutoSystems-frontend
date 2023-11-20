@@ -1,5 +1,10 @@
 import { Marca } from "../marca/marca";
 
+export interface TipoMarca {
+    idmarca: number;
+    descripcion: string;
+  }
+
 export class Carro {
     id: number;
     modelo: string;
