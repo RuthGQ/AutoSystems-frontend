@@ -16,6 +16,7 @@ import { NgxPrintModule } from 'ngx-print';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { FiltroComponent } from './components/carro/filtro/filtro.component';
 import { EmpleadoComponent } from './components/empleado/empleado.component';
+import { FiltroClienteComponent } from './components/cliente/filtro-cliente/filtro-cliente.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { EmpleadoComponent } from './components/empleado/empleado.component';
     PdfComponent,
     ClienteComponent,
     FiltroComponent,
-    EmpleadoComponent
+    EmpleadoComponent,
+    FiltroClienteComponent
   ],
   imports: [
     BrowserModule,

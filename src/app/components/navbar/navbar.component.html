@@ -27,19 +27,20 @@
         <a style="margin-left: 10px; border: none; font-size: 18px" class="btn btn-outline-light" routerLink="venta">Nueva Venta</a>
       </li>
 
-      <div class="dropdown">
-        <button style="border: none; font-size: 18px" class="btn btn-outline-light" type="button"
-          id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div class="dropdown nav-item">
+        <button style="border: none; font-size: 18px" class="btn btn-outline-light dropdown-toggle" type="button"
+          id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Consultas
         </button>
         <div class="dropdown-menu text-center">
-          <a class="dropdown-item" routerLink="#" >Empleados</a>
+          <a class="dropdown-item" routerLink="/empleado" >Empleados</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" routerLink="#" >Clientes</a>
+          <a class="dropdown-item" routerLink="/CliNombre" >Clientes</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" routerLink="/carro" >Carros</a>
+          <a class="dropdown-item" routerLink="/marca" >Carros</a>
         </div>
       </div>
+
       <div class="dropdown">
         <button style="border: none; font-size: 18px" class="btn btn-outline-light" type="button"
           id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" routerLink="reporte" aria-expanded="false">
@@ -56,14 +57,9 @@
       <input type="hidden" name="IdEmpleado" />
       <button style="border: none; font-size: 18px" class="btn btn-outline-light dropdown-toggle w3-button"
         type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <strong> </strong>
+        <strong>Ruth Mery</strong>
       </button>
       <div class="dropdown-menu w3-dropdown-content w3-bar-block" style="right: 0px">
-        <a style="text-align: center" class="w3-bar-item w3-button" routerLink="#">
-          <img src="" alt="70" width="60" />
-        </a>
-        <a style="text-align: center" class="w3-bar-item w3-button" routerLink="#"></a>
-        <a style="text-align: center" class="w3-bar-item w3-button" routerLink="#"></a>
         <div class="dropdown-divider"></div>
         <a style="text-align: center" class="w3-bar-item w3-button" (click)="logout()">Salir</a>
       </div>

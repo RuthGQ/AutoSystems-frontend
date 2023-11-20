@@ -78,7 +78,9 @@
                         <td>{{elemento.precio}}</td>
                         <td>{{elemento.stock}}</td>
                         <td><button class="btn btn-primary">Editar</button>
-                            <button class="btn btn-danger">Eliminar</button></td>
+                            <button  class="btn btn-danger" (click)="eliminar(elemento.id)">
+                                Eliminar
+                              </button></td>
                     </tr>
                 </tbody>
             </table>
