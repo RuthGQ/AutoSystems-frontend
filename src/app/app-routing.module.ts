@@ -10,6 +10,7 @@ import { ClienteComponent } from './components/cliente/cliente.component';
 import { FiltroComponent } from './components/carro/filtro/filtro.component';
 import { EmpleadoComponent } from './components/empleado/empleado.component';
 import { FiltroClienteComponent} from './components/cliente/filtro-cliente/filtro-cliente.component'
+import { FiltroEmpladoComponent } from './components/empleado/filtro-empleado/filtro-empleado.component'
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:"cliente", component:ClienteComponent},
   {path:"marca", component:FiltroComponent},
   {path:"empleado", component:EmpleadoComponent},
-  {path:"CliNombre", component:FiltroClienteComponent}
+  {path:"CliNombre", component:FiltroClienteComponent},
+  {path:"EmpleNombre", component:FiltroEmpladoComponent}
 ]
 
 @NgModule({

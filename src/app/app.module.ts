@@ -17,6 +17,7 @@ import { ClienteComponent } from './components/cliente/cliente.component';
 import { FiltroComponent } from './components/carro/filtro/filtro.component';
 import { EmpleadoComponent } from './components/empleado/empleado.component';
 import { FiltroClienteComponent } from './components/cliente/filtro-cliente/filtro-cliente.component';
+import { FiltroEmpladoComponent } from './components/empleado/filtro-empleado/filtro-empleado.component'
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { FiltroClienteComponent } from './components/cliente/filtro-cliente/filt
     ClienteComponent,
     FiltroComponent,
     EmpleadoComponent,
-    FiltroClienteComponent
+    FiltroClienteComponent,
+    FiltroEmpladoComponent
   ],
   imports: [
     BrowserModule,
