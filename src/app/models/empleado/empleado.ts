@@ -1,5 +1,10 @@
 import { TipoEmpleado } from "../tipoempleado/tipo-empleado";
 
+export interface TipoDto {
+    idTipo: number;
+    descrip: string;
+  }
+  
 export class Empleado {
     idEmpleado:number;
     dni:string;
@@ -10,6 +15,7 @@ export class Empleado {
     clave:string;
     img:string;
     objTipo:TipoEmpleado;
+ 
 
     /**
      *

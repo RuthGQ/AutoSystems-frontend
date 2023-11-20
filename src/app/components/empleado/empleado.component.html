@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="empleado.component.css">
+  <title>Mantenimiento Empleado</title>
+</head>
+
+<body>
+  <h1>Mantenimiento Empleados</h1>
+  <br>
+  <div class="container">
+    <div class="card form-container">
+      <div class="card-body">
+        <form [formGroup]="nuevoEmpleado" (ngSubmit)="guardarEmpleado()">
+          <!-- <input type="text" class="form-control" placeholder="Ingrese su dni" formControlName="dni"> -->
+          <div class="form-group">
+            <label>Dni</label>
+            <input type="text" class="form-control" placeholder="Ingrese su DNI" formControlName="dni">
+          </div>
+          <div class="form-group">
+            <label>Nombres</label>
+            <input type="text" class="form-control" placeholder="Ingrese su Nombre" formControlName="nom">
+          </div>
+          <div class="form-group">
+            <label>Apellidos</label>
+            <input type="text" class="form-control" placeholder="Ingrese su Apellido" formControlName="ape">
+          </div>
+          <div class="form-group">
+            <label for="inputTel">Teléfono</label>
+            <input type="text" class="form-control" placeholder="Ingrese su Teléfono" formControlName="tel">
+          </div>
+          <div class="form-group">
+            <label>Tipo</label>
+            <select class="form-control" formControlName="objTipo">
+              <option *ngFor="let tipo of objTipo" [ngValue]="tipo">
+                {{ tipo.descrip }}
+              </option>
+            </select>
+         </div>
+          <div class="form-group">
+            <label>User</label>
+            <input type="text" class="form-control" placeholder="Ingrese su Usuario" formControlName="user">
+          </div>
+          <div class="form-group">
+            <label>Clave</label>
+            <input type="text" class="form-control" placeholder="Ingrese su Clave" formControlName="clave">
+          </div>
+          <button type="submit" class="btn btn-primary mt-2">
+            Agregar
+        </button>
+        <button type="button" class="btn btn-primary mt-2" (click)="ActualizarEmpleado()">
+            Actualizar
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="list-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Dni</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Clave</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let elemento of dataempl">
+            <th scope="row">{{elemento.idEmpleado}}</th>
+            <td>{{elemento.dni}}</td>
+            <td>{{elemento.nom}}</td>
+            <td>{{elemento.ape}}</td>
+            <td>{{elemento.tel}}</td>
+            <td>{{elemento.objTipo.descrip}}</td>
+            <td>{{elemento.user}}</td>
+            <td>{{elemento.clave}}</td>
+            
+            <td>
+              <button class="btn btn-primary mx-1" (click)="editarEmpleado(elemento)">
+                <i class="bi bi-pencil"></i>
+              </button>
+              <button class="btn btn-danger" (click)="eliminarEmpleado(elemento.idEmpleado)">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
