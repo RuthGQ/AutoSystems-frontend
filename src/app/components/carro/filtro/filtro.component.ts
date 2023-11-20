@@ -31,7 +31,7 @@ export class FiltroComponent implements OnInit{
   ngOnInit(): void {
     this.listarMarcas();
     this.llenarData();
-    this.listaCarros();
+    //this.listaCarros();
  } 
 
   llenarData(){
@@ -66,8 +66,8 @@ export class FiltroComponent implements OnInit{
     )
   }
 
-  listaCarros(): void {
-    this.apiService.BuscarCarro(this.busqueda).subscribe(
+  listaCarros(marca:string): void {
+    this.apiService.buscarCarro(marca).subscribe(
       data => {
         this.data = data;
       },
@@ -79,11 +79,15 @@ export class FiltroComponent implements OnInit{
 
   onChangeMarca(): void {
     if (this.marcaElegida) {
+      console.log(this.marcaElegida)
       this.busqueda.marca =  this.marcaElegida;
+      this.listaCarros(this.busqueda.marca);
     } else {
       this.busqueda.marca = '';
+      //this.llenarData();
     }
-    this.listaCarros();
+    console.log(this.marcaElegida)
+
   }
   
 }

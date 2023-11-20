@@ -34,8 +34,8 @@ export class CarroService {
     return this.http.get<any[]>(this.urlmarca + '/list');
   }
 
-  BuscarCarro(buscarCarro: BuscarCarro): Observable<any[]> {
-    return this.http.post<any[]>(this.api_url, buscarCarro);
+  buscarCarro(buscarCarro: string): Observable<any> {
+    return this.http.get(this.api_url+"/marca/"+buscarCarro);
   }
 
   public eliminarCarro(id: number) {
